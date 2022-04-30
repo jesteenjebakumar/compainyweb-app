@@ -22,16 +22,15 @@
             <div class="mx-auto w-1/2 hidden lg:block ml-3" id="computer">
                 
                 <ul class="flex text-3xl overflow-hidden" >
-                    <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3  rounded cursor-pointer"><a href="" >home</a> </li>
+                    <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3  rounded cursor-pointer" id="center"><a href="" >home</a> </li>
                     <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3 rounded cursor-pointer" ><a href="">videos</a>  </li>
                     <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3 rounded cursor-pointer"  id="hide-conent"> accounts 
                      <ul class="text-center cursor-pointer bg-black-200" id="target-conent">
                          <li id="account-name">name</li>
-                         
                      </ul>
 
                     </li> 
-                    <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3 rounded"><a href="">oboutus</a> </li>
+                    <li class="ml-10 px-2 hover:bg-red-500 py-2 px-3 rounded"> <a href="" >oboutus</a> </li>
                 </ul>
             </div>
             <div class="block lg:hidden p-4 " id="triger">
@@ -68,7 +67,7 @@
                 </div>
               <div class="block w-full  h-full"> 
             
-                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">titlle</h2>
+                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">title</h2>
                     <h3 class="w-full h-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, totam nobis? Inventore deleniti aspernatur sequi exercitationem numquam sit quia, maxime odio incidunt 
                         qui eaque aliquid excepturi unde sed quod ratione.</h3>
                 </div> 
@@ -79,7 +78,7 @@
                 </div>
               <div class="block w-full h-full"> 
             
-                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">titlle</h2>
+                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">title</h2>
                     <h3 class="w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, totam nobis? Inventore deleniti aspernatur sequi exercitationem numquam sit quia, maxime odio incidunt 
                         qui eaque aliquid excepturi unde sed quod ratione.</h3>
                 </div> 
@@ -90,7 +89,7 @@
                 </div>
               <div class="block w-full h-1/2"> 
             
-                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">titlle</h2>
+                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">title</h2>
                     <h3 class="w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, totam nobis? Inventore deleniti aspernatur sequi exercitationem numquam sit quia, maxime odio incidunt 
                         qui eaque aliquid excepturi unde sed quod ratione.</h3>
                 </div> 
@@ -101,7 +100,7 @@
                 </div>
               <div class="block w-full h-full"> 
             
-                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">titlle</h2>
+                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">title</h2>
                     <h3 class="w-full h-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, totam nobis? Inventore deleniti aspernatur sequi exercitationem numquam sit quia, maxime odio incidunt 
                         qui eaque aliquid excepturi unde sed quod ratione.</h3>
                 </div> 
@@ -112,7 +111,7 @@
                 </div>
               <div class="block w-full h-full  "> 
             
-                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">titlle</h2>
+                    <h2 class="text-gray-700 font-bold text-center p-2 text-lg">title</h2>
                     <h3 class="w-full h-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, totam nobis? Inventore deleniti aspernatur sequi exercitationem numquam sit quia, maxime odio incidunt 
                         qui eaque aliquid excepturi unde sed quod ratione.</h3>
                 </div> 
@@ -167,18 +166,45 @@
     let checking=0;
     let hide_conent=document.getElementById('hide-conent');
     let target_conent=document.getElementById('target-conent');
-    hide_conent.addEventListener('click',()=>{
-        if(!checking){
-         
-target_conent.style.height="0";
-            checking=1
+    target_conent.style.height="0";
+    let align=false;
 
+    let center=document.querySelectorAll('#center'); 
+    hide_conent.addEventListener('click',()=>{
+
+        if(!checking){
+           
+            // console.log(align);
+            target_conent.style.height="0";
+           
+            checking=1;
+            
         }
         else{
             checking=0;
             target_conent.style.height=null;
+          
+            // console.log(align);
         }
+       
     })
+    function status(){
+
+        if(align==true){
+        //    alert('true')
+            for (let index = 0; index < center.length; index++) {
+                center[index].style.color="black"; 
+            }
+            align=false;
+        }
+        else if(align==false){
+    }
+        // alert('false')
+        for (let index = 0; index < center.length; index++) {
+            center[index].style.color="yellow"; 
+        }
+align=true;
+    }
 </script>
 <script src="./script.js"></script>
 <script src="./help.js"></script>

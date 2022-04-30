@@ -9,7 +9,7 @@
       if(login_name.value==name_p){
          
     if(login_password.value==password){
-    window.location.href="index.html"
+    window.location.href="intro.html"
     }
     else{
     
